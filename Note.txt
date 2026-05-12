@@ -1,0 +1,40 @@
+No, we did not use any external or remote backend (like Firebase, Node.js, or a REST API) in this project.
+
+The GramaKhata application is built as an offline-first app. Instead of a remote backend, it uses a local database directly on the device using Android's Room Database to store all customers and transactions.
+
+Here is the breakdown of the frontend (UI layer) and backend (local data layer) folders and files in your project:
+
+📱 Frontend (UI Layer)
+This includes all the screens, ViewModels, and theming. It's located in the ui package and the root of the app.
+
+MainActivity.kt - The main entry point of the application.
+GramaKhataApp.kt - The root composable that handles navigation.
+ui/screens/ - Contains all the visible screens and their ViewModels:
+splash/
+SplashScreen.kt - The initial loading screen.
+dashboard/
+DashboardScreen.kt - The home screen showing balances.
+DashboardViewModel.kt - Manages data for the dashboard.
+customer/
+OnboardCustomerScreen.kt - Screen to add a new customer.
+CustomerProfileScreen.kt - Screen to view a specific customer's details.
+CustomerViewModel.kt - Manages data for customer operations.
+ui/theme/ - Contains your UI styling (Color palettes, Typography, Theme definitions).
+Color.kt, Theme.kt, Type.kt
+💾 Backend / Data Layer (Local Database)
+This acts as your application's "backend". It manages the SQLite database on the phone using Room. It's located entirely within the data package.
+
+data/local/ - Core database setup.
+AppDatabase.kt - The main Room database configuration.
+data/local/entity/ - Your database tables.
+Customer.kt - Table for customer details.
+Transaction.kt - Table for credit/payment logs.
+CustomerWithBalance.kt - A helper class to get a customer with their total balance.
+data/local/dao/ - Data Access Objects (SQL queries).
+CustomerDao.kt - Queries for saving/fetching customers.
+TransactionDao.kt - Queries for saving/fetching transactions.
+data/repository/
+LedgerRepository.kt - The bridge between the database (DAOs) and the UI (ViewModels). It provides a clean API for the frontend to request data.
+⚙️ Dependency Injection (Connecting UI to Data)
+di/
+AppModule.kt - Contains Hilt configurations that provide the database and repository instances to your ViewModels automatically.
