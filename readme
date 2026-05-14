@@ -1,0 +1,64 @@
+Grama-Khata 
+
+Grama-Khata is an Android-based digital ledger application designed for small village shopkeepers and local vendors to manage customer credit transactions easily. The app replaces traditional handwritten “Vahi” books with a simple and user-friendly digital solution.It helps shopkeepers store customer details, track credit and payment history, calculate pending balances automatically, and send payment reminders through WhatsApp or SMS.
+
+Features
+> Customer profile management with name and photo
+> Add credit and payment transactions
+> Automatic due balance calculation
+> Due dashboard showing customers with pending amounts
+> One-tap WhatsApp/SMS payment reminders
+> Offline-first data storage using Room Database
+> Simple and easy-to-use interface for daily shop usage
+
+Technologies Used
+> Kotlin
+> Android Studio
+> Jetpack Compose
+> Room Database
+> MVVM Architecture
+> ViewModel
+> Navigation Component
+> WhatsApp/SMS Intents
+> Git & GitHub
+
+App Workflow
+> Shopkeeper adds customer details
+> Credit or payment transactions are recorded
+> App automatically updates customer balance
+> Due customers are displayed in dashboard
+> Reminder messages can be sent directly through WhatsApp or SMS
+
+Problem Statement
+Small grocery shops and village vendors still use handwritten books to manage customer credit records. These physical records can be lost, damaged, or miscalculated, leading to confusion and financial losses. Grama-Khata provides a digital solution that simplifies credit management and improves financial tracking for small retailers.
+
+Database
+The application uses Room Database for secure offline storage of:
+1. Customer details
+2. Transaction records
+3. Due balances
+
+Project Structure
+app/
+ ├── screens/
+ ├── components/
+ ├── navigation/
+ ├── database/
+ ├── viewmodel/
+ └── utils/
+
+Installation Steps
+Clone the repository:
+git clone https://github.com/Amritha0306/Grama-khata.git
+Open the project in Android Studio.
+Sync Gradle files.
+Add your Firebase configuration file (google-services.json) inside the app/ folder.
+Run the application on an emulator or Android device.
+
+Future Enhancements
+> Cloud backup using Firebase
+> Multi-language support
+> AI-based smart reminders
+> PDF bill/report generation
+> Analytics dashboard
+> Shopkeeper authentication system
